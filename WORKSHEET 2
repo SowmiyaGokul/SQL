@@ -1,0 +1,43 @@
+create database sample;
+use sample;
+
+create table firm(
+
+Emp_Id varchar(50) NOT NULL,
+First_name varchar(30),
+Last_name  varchar(30),
+Gender varchar(1),
+Role varchar (100),
+Dept varchar(100),
+
+Manager_id varchar(20),
+Exp int NOT NULL check (Exp >=0),
+constraint Gender_check check(Gender in ('M', 'F', 'O')));
+
+describe firm;
+
+insert into firm values ("Wildon","Michale","F","Analyst","IT","M1",4);
+ insert into firm values("E200","alan","asher","M","Doctor","medical","M3",12);
+insert into firm values ("E300","gokul","muthu","M","enginner","Infotech","M4",44);
+insert into COMPANY VALUES(
+
+#delete from firm where Emp_Id = "E100";
+Alter Table firm add City varchar(100) ;
+alter table COMPANY rename column First_name to Original_name ; #doubt
+alter table firm drop column City;
+alter table firm rename to COMPANY;
+alter table COMPANY add Nationality  varchar(100);
+#insert into column Nationality values ("Indian");
+select distinct * from firm; #(duplicate values delet)
+#select Gender, Role from firm; #(select only few columns)
+SHOW tables;
+
+Select * from COMPANY; 
+select current_time();
+#delete from COMPANY where exp>=5;
+select count("Gender") as  people
+from COMPANY;
+
+
+
+
